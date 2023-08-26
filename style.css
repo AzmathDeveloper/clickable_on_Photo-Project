@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box; /* to avoid width problems if padding */
+}
+
+body {
+  font-family: "Muli", sans-serif;  /*  adding font family  */
+  display: flex;  /* it will set the items in a row */
+  align-items: center;  /* centre the items in a row */
+  justify-content: center; /* centre the items in a columns */
+  height: 100vh; /* take the whole display of device */
+  overflow: hidden; /* to hide scrollbars */
+  margin: 0; 
+}
+
+.container {
+  display: flex; /* set the all items in a rows */
+  width: 90vw; /* it take only 90% of the width of device and 10% will be empty */
+}
+
+.panel {
+  background-size: auto 100%; /* adjusting size of the background image */
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 80vh;
+  border-radius: 50px; /* by this we can set how much curve should be there of an image */
+  color: #fff; /* font color */
+  cursor: pointer; /* when we put our cursor on it will change to pointer */
+  flex: 0.5; 
+  margin: 10px;
+  position: relative;
+  transition: all 0.7s ease-in;
+  -webkit-transition: all 700ms ease-in; 
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
